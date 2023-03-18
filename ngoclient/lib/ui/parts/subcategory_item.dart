@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../../core/models/subcategory_model.dart';
 import '../../core/providers/user_provider.dart';
+import '../../ngo_admin/screens/add_requirements.dart';
 
 class SubCategoryItem extends StatelessWidget {
   const SubCategoryItem({
@@ -13,7 +14,7 @@ class SubCategoryItem extends StatelessWidget {
   });
 
   final CategoryModel selectedCategory;
-  final SubCategoryModel selectedSubcategory;
+  final int selectedSubcategory;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,16 @@ class SubCategoryItem extends StatelessWidget {
                       selectedSubCategory: selectedSubcategory),
                 ),
               )
+            },
+          if (user.isNGO == true)
+            {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => AddNGORequirements(
+                      selectedCategory: selectedCategory,
+                      selectedSubCategory: selectedSubcategory),
+                ),
+              )
             }
         },
         child: Card(
@@ -37,7 +48,8 @@ class SubCategoryItem extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
             child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: Text(selectedSubcategory.name))),
+                child:
+                    Text(selectedCategory.subcategory[selectedSubcategory]))),
       );
     });
   }

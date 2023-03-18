@@ -9,7 +9,7 @@ import '../../core/models/subcategory_model.dart';
 
 class MatchScreen extends StatefulWidget {
   final CategoryModel selectedCategory;
-  final SubCategoryModel selectedSubCategory;
+  final int selectedSubCategory;
 
   MatchScreen(
       {required this.selectedCategory, required this.selectedSubCategory});
@@ -97,7 +97,7 @@ class _MatchScreenState extends State<MatchScreen> {
       appBar: AppBar(
         title: Text(widget.selectedCategory.name +
             " > " +
-            widget.selectedSubCategory.name),
+            widget.selectedCategory.subcategory[widget.selectedSubCategory]),
       ),
       body: Column(
         children: [

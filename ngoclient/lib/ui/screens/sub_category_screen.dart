@@ -23,12 +23,12 @@ class SubCategoryScreen extends StatelessWidget {
         ),
         body: ListView.builder(
             // the number of items in the list
-            itemCount: selectedSubcategoryList.length,
+            itemCount: item.subcategory.length,
 
             // display each item of the product list
             itemBuilder: (context, index) {
               return SubCategoryItem(
-                selectedSubcategory: selectedSubcategoryList[index],
+                selectedSubcategory: index,
                 selectedCategory: item,
               );
             }));
