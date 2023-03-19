@@ -13,24 +13,20 @@ class DrawerMenu extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(appPadding),
-            child: Image.asset("assets/images/logowithtext.png"),
+            child: Image.asset("images/logowithtext.png"),
           ),
           DrawerListTile(
               title: 'Dash Board',
-              svgSrc: 'assets/icons/Dashboard.svg',
+              svgSrc: 'icons/Dashboard.svg',
               tap: () {
                 print('You Click Dash Board');
               }),
           DrawerListTile(
-              title: 'Blog Post',
-              svgSrc: 'assets/icons/BlogPost.svg',
-              tap: () {}),
+              title: 'Blog Post', svgSrc: 'icons/BlogPost.svg', tap: () {}),
           DrawerListTile(
-              title: 'Message', svgSrc: 'assets/icons/Message.svg', tap: () {}),
+              title: 'Message', svgSrc: 'icons/Message.svg', tap: () {}),
           DrawerListTile(
-              title: 'Statistics',
-              svgSrc: 'assets/icons/Statistics.svg',
-              tap: () {}),
+              title: 'Statistics', svgSrc: 'icons/Statistics.svg', tap: () {}),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
@@ -39,11 +35,9 @@ class DrawerMenu extends StatelessWidget {
             ),
           ),
           DrawerListTile(
-              title: 'Settings',
-              svgSrc: 'assets/icons/Setting.svg',
-              tap: () {}),
+              title: 'Settings', svgSrc: 'icons/Setting.svg', tap: () {}),
           DrawerListTile(
-              title: 'Logout', svgSrc: 'assets/icons/Logout.svg', tap: () {}),
+              title: 'Logout', svgSrc: 'icons/Logout.svg', tap: () {}),
         ],
       ),
     );

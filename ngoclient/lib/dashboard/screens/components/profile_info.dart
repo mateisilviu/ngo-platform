@@ -16,7 +16,7 @@ class ProfileInfo extends StatelessWidget {
           child: Stack(
             children: [
               SvgPicture.asset(
-                "assets/icons/Bell.svg",
+                "icons/Bell.svg",
                 height: 25,
                 color: textColor.withOpacity(0.8),
               ),
@@ -44,7 +44,7 @@ class ProfileInfo extends StatelessWidget {
             children: [
               ClipRRect(
                 child: Image.asset(
-                  'assets/images/photo3.jpg',
+                  'images/photo3.jpg',
                   height: 38,
                   width: 38,
                   fit: BoxFit.cover,
