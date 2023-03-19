@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'core/providers/user_provider.dart';
+import 'core/services/category_db_service.dart';
 import 'firebase_options.dart';
 import 'ui/homepage.dart';
 import 'ui/parts/categories_grid.dart';
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // DatabaseServiceCategory().init();
   runApp(ChangeNotifierProvider(
       create: (context) => UserModel(), child: const MyApp()));
 }

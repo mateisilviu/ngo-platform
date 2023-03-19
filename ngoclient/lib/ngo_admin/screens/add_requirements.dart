@@ -3,11 +3,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../core/models/category_model copy.dart';
 import '../../core/models/category_model.dart';
 import '../../core/models/subcategory_model.dart';
 
 class AddNGORequirements extends StatefulWidget {
-  final CategoryModel selectedCategory;
+  final CategoryModel2 selectedCategory;
   final int selectedSubCategory;
 
   AddNGORequirements(
@@ -46,12 +47,7 @@ class _AddNGORequirementsState extends State<AddNGORequirements> {
         children: [
           Text("Adauga cerintele ONG-ului"),
           Text(
-            this.widget.selectedCategory.name +
-                " > " +
-                this
-                    .widget
-                    .selectedCategory
-                    .subcategory[widget.selectedSubCategory],
+            "${this.widget.selectedCategory.name} > ${this.widget.selectedCategory.subcategory![widget.selectedSubCategory].name})",
             style: TextStyle(fontSize: 16),
           )
         ],

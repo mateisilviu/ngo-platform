@@ -3,6 +3,7 @@ import 'package:ngoclient/core/models/category_model.dart';
 import 'package:ngoclient/ui/screens/match_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/models/category_model copy.dart';
 import '../../core/models/subcategory_model.dart';
 import '../../core/providers/user_provider.dart';
 import '../../ngo_admin/screens/add_requirements.dart';
@@ -13,7 +14,7 @@ class SubCategoryItem extends StatelessWidget {
     required this.selectedSubcategory,
   });
 
-  final CategoryModel selectedCategory;
+  final CategoryModel2 selectedCategory;
   final int selectedSubcategory;
 
   @override
@@ -48,8 +49,18 @@ class SubCategoryItem extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
             child: Padding(
                 padding: const EdgeInsets.all(10),
-                child:
-                    Text(selectedCategory.subcategory[selectedSubcategory]))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(IconData(
+                        selectedCategory.subcategory![selectedSubcategory].icon,
+                        fontFamily: 'MaterialIcons')),
+                    Text(selectedCategory
+                        .subcategory![selectedSubcategory].name),
+                    Text(
+                        "Total necesar ${selectedCategory.subcategory![selectedSubcategory].total}"),
+                  ],
+                ))),
       );
     });
   }

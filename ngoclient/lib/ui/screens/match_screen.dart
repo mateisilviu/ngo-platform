@@ -3,12 +3,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../core/models/category_model copy.dart';
 import '../../core/models/category_model.dart';
 import '../../core/models/ngo.dart';
 import '../../core/models/subcategory_model.dart';
 
 class MatchScreen extends StatefulWidget {
-  final CategoryModel selectedCategory;
+  final CategoryModel2 selectedCategory;
   final int selectedSubCategory;
 
   MatchScreen(
@@ -95,9 +96,8 @@ class _MatchScreenState extends State<MatchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.selectedCategory.name +
-            " > " +
-            widget.selectedCategory.subcategory[widget.selectedSubCategory]),
+        title: Text(
+            "${widget.selectedCategory.name} > ${widget.selectedCategory.subcategory![widget.selectedSubCategory].name}"),
       ),
       body: Column(
         children: [

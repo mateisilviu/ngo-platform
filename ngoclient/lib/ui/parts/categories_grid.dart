@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:ngoclient/core/models/category_model.dart';
 
+import '../../core/models/category_model copy.dart';
 import '../../core/services/category_db_service.dart';
 import '../../core/util/app-constants.dart';
 import '../../core/util/responsive.dart';
@@ -23,7 +24,7 @@ class CategoriesGrid extends StatelessWidget {
             ? AppConstants.PADDING / 2
             : AppConstants.PADDING;
     return StreamBuilder(
-        stream: DatabaseServiceCategory.categoriesDB.snapshots(),
+        stream: DatabaseServiceCategory.categoriesDB2.snapshots(),
         builder: (ctx, AsyncSnapshot<QuerySnapshot> categoriesSnapshot) {
           if (categoriesSnapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -35,7 +36,7 @@ class CategoriesGrid extends StatelessWidget {
             padding: EdgeInsets.all(10),
             itemCount: categoriesDocs.length,
             itemBuilder: (ctx, i) =>
-                CategoryItem(categoriesDocs[i].data() as CategoryModel),
+                CategoryItem(categoriesDocs[i].data() as CategoryModel2),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: ResponsiveWidget.calculateCrossAxisCount(context),
               childAspectRatio:
