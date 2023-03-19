@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'core/providers/user_provider.dart';
 import 'core/services/category_db_service.dart';
+import 'dashboard/controllers/controller.dart';
 import 'firebase_options.dart';
 import 'ui/homepage.dart';
 import 'ui/parts/categories_grid.dart';
@@ -13,8 +14,13 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // DatabaseServiceCategory().init();
-  runApp(ChangeNotifierProvider(
-      create: (context) => UserModel(), child: const MyApp()));
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider<Controller>(create: (context) => Controller()),
+      ChangeNotifierProvider<UserModel>(create: (context) => UserModel())
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

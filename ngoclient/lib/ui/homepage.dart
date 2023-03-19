@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../core/providers/user_provider.dart';
+import '../dashboard/screens/dash_board_screen.dart';
 import 'screens/categories_screen.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -42,9 +43,9 @@ class HomePageScreen extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: () {
               Provider.of<UserModel>(context, listen: false).loginCompany();
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (context) => CategoriesScreen(),
+                  builder: (context) => DashBoardScreen(),
                 ),
               );
             },
