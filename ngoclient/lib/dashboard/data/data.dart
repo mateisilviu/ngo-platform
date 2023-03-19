@@ -34,32 +34,32 @@ List discussionData = [
   DiscussionInfoModel(
     imageSrc: "images/photo1.jpg",
     name: "Lutfhi Chan",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
   DiscussionInfoModel(
     imageSrc: "images/photo2.jpg",
     name: "Devi Carlos",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
   DiscussionInfoModel(
     imageSrc: "images/photo3.jpg",
     name: "Danar Comel",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
   DiscussionInfoModel(
     imageSrc: "images/photo4.jpg",
     name: "Karin Lumina",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
   DiscussionInfoModel(
     imageSrc: "images/photo5.jpg",
     name: "Fandid Deadan",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
   DiscussionInfoModel(
     imageSrc: "images/photo1.jpg",
     name: "Lutfhi Chan",
-    date: "Jan 25,2021",
+    date: "Mar 19,2023",
   ),
 ];
 

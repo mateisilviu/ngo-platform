@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ngoclient/core/util/responsive.dart';
+import 'package:ngoclient/dashboard/constants/responsive.dart';
 import 'package:provider/provider.dart';
 
 import '../core/providers/user_provider.dart';
 import '../dashboard/screens/dash_board_screen.dart';
+import 'footer/footer.dart';
 import 'screens/categories_screen.dart';
 
 class HomePageScreen extends StatelessWidget {
@@ -55,8 +58,15 @@ class HomePageScreen extends StatelessWidget {
             label: Text('Logare Companie'), // <-- Text
           ),
         ]),
-        body: Column(
-          children: [],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.6,
+              ),
+              FooterComponent(),
+            ],
+          ),
         ));
   }
 }

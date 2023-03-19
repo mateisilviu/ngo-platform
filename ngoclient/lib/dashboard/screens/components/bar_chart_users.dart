@@ -23,25 +23,25 @@ class BarChartUsers extends StatelessWidget {
                 margin: appPadding,
                 getTitles: (double value) {
                   if (value == 2) {
-                    return 'jan 6';
+                    return 'march 6';
                   }
                   if (value == 4) {
-                    return 'jan 8';
+                    return 'march 8';
                   }
                   if (value == 6) {
-                    return 'jan 10';
+                    return 'march 10';
                   }
                   if (value == 8) {
-                    return 'jan 12';
+                    return 'march 12';
                   }
                   if (value == 10) {
-                    return 'jan 14';
+                    return 'march 14';
                   }
                   if (value == 12) {
-                    return 'jan 16';
+                    return 'march 16';
                   }
                   if (value == 14) {
-                    return 'jan 18';
+                    return 'march 18';
                   } else {
                     return '';
                   }

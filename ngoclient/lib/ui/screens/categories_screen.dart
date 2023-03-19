@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:ngoclient/ui/parts/categories_grid.dart';
 
+import '../footer/footer.dart';
+
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
@@ -12,7 +14,15 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Categorii"),
       ),
-      body: CategoriesGrid(),
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          SizedBox(
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: CategoriesGrid()),
+          FooterComponent(),
+        ],
+      )),
     );
   }
 }
