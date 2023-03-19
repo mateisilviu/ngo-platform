@@ -6,13 +6,17 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../../core/models/category_model copy.dart';
 import '../../core/models/category_model.dart';
 import '../../core/models/subcategory_model.dart';
+import '../../core/services/category_db_service.dart';
 
 class AddNGORequirements extends StatefulWidget {
   final CategoryModel2 selectedCategory;
   final int selectedSubCategory;
+  final String docRef;
 
   AddNGORequirements(
-      {required this.selectedCategory, required this.selectedSubCategory});
+      {required this.selectedCategory,
+      required this.selectedSubCategory,
+      required this.docRef});
 
   @override
   State<AddNGORequirements> createState() => _AddNGORequirementsState();
@@ -47,7 +51,7 @@ class _AddNGORequirementsState extends State<AddNGORequirements> {
         children: [
           Text("Adauga cerintele ONG-ului"),
           Text(
-            "${this.widget.selectedCategory.name} > ${this.widget.selectedCategory.subcategory![widget.selectedSubCategory].name})",
+            "${this.widget.selectedCategory.name} > ${this.widget.selectedCategory.subcategory![widget.selectedSubCategory].name}",
             style: TextStyle(fontSize: 16),
           )
         ],
@@ -95,6 +99,10 @@ class _AddNGORequirementsState extends State<AddNGORequirements> {
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             print(myController.text);
+            CategoryModel2 updatedTotal = widget.selectedCategory;
+            updatedTotal.subcategory![widget.selectedSubCategory].total =
+                int.parse(myController.text);
+            DatabaseServiceCategory().update(widget.docRef, updatedTotal);
           },
           child: const Icon(Icons.save)),
     );

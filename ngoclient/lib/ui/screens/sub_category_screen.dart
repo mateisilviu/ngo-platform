@@ -14,7 +14,8 @@ class SubCategoryScreen extends StatelessWidget {
   //   SubCategoryModel(name: "Geci", icon: "icon"),
   // ];
   final CategoryModel2 item;
-  SubCategoryScreen(this.item);
+  final String docRef;
+  SubCategoryScreen(this.item, this.docRef);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class SubCategoryScreen extends StatelessWidget {
               return SubCategoryItem(
                 selectedSubcategory: index,
                 selectedCategory: item,
+                docRef: docRef,
               );
             }));
   }

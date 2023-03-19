@@ -28,6 +28,18 @@ class DatabaseServiceCategory {
   //   }
   // }
 
+  Future<void> update(String docRef, CategoryModel2 selectedCategory) async {
+    try {
+      FirebaseFirestore.instance
+          .collection('categories')
+          .doc(docRef)
+          .set(selectedCategory.toJson());
+    } catch (error) {
+      print(error);
+      throw error;
+    }
+  }
+
   init() async {
     List<SubCategoryModel> food = [
       SubCategoryModel(
@@ -68,7 +80,7 @@ class DatabaseServiceCategory {
 
     initData.forEach((element) {
       try {
-        categoriesDB2.add(element);
+        var ref = categoriesDB2.add(element);
       } catch (error) {
         print(error);
         throw error;

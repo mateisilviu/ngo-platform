@@ -9,13 +9,14 @@ import '../../core/providers/user_provider.dart';
 import '../../ngo_admin/screens/add_requirements.dart';
 
 class SubCategoryItem extends StatelessWidget {
-  const SubCategoryItem({
-    required this.selectedCategory,
-    required this.selectedSubcategory,
-  });
+  const SubCategoryItem(
+      {required this.selectedCategory,
+      required this.selectedSubcategory,
+      required this.docRef});
 
   final CategoryModel2 selectedCategory;
   final int selectedSubcategory;
+  final String docRef;
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +38,10 @@ class SubCategoryItem extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => AddNGORequirements(
-                      selectedCategory: selectedCategory,
-                      selectedSubCategory: selectedSubcategory),
+                    selectedCategory: selectedCategory,
+                    selectedSubCategory: selectedSubcategory,
+                    docRef: docRef,
+                  ),
                 ),
               )
             }

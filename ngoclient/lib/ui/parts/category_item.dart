@@ -8,7 +8,8 @@ import '../../core/models/category_model.dart';
 
 class CategoryItem extends StatelessWidget {
   final CategoryModel2 item;
-  const CategoryItem(this.item);
+  final String docRef;
+  const CategoryItem(this.item, this.docRef);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class CategoryItem extends StatelessWidget {
       onTap: () => {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (context) => SubCategoryScreen(item),
+            builder: (context) => SubCategoryScreen(item, docRef),
           ),
         )
       },

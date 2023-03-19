@@ -35,8 +35,9 @@ class CategoriesGrid extends StatelessWidget {
           return GridView.builder(
             padding: EdgeInsets.all(10),
             itemCount: categoriesDocs.length,
-            itemBuilder: (ctx, i) =>
-                CategoryItem(categoriesDocs[i].data() as CategoryModel2),
+            itemBuilder: (ctx, i) => CategoryItem(
+                categoriesDocs[i].data() as CategoryModel2,
+                categoriesDocs[i].reference.id),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: ResponsiveWidget.calculateCrossAxisCount(context),
               childAspectRatio:

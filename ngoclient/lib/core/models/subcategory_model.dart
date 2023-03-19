@@ -4,7 +4,7 @@ class SubCategoryModel {
 
   final String name;
   final int icon;
-  final int total;
+  int total;
 
   SubCategoryModel.fromJson(Map<String, dynamic> json)
       : this(
