@@ -11,15 +11,15 @@ import 'screens/categories_screen.dart';
 
 class HomePageScreen extends StatelessWidget {
   var homepageImages = [
-    Image(image: AssetImage('assets/images/homepage/donate1_1024.jpg')),
-    Image(image: AssetImage('assets/images/homepage/donate2_1024.jpg')),
-    Image(image: AssetImage('assets/images/homepage/donate3_1024.jpg')),
+    Image(image: AssetImage("images/homepage/donate1_1024.jpg")),
+    Image(image: AssetImage("images/homepage/donate2_1024.jpg")),
+    Image(image: AssetImage("images/homepage/donate3_1024.jpg")),
   ];
 
   List<Widget> partners = [
-    Image.asset('images/parteneri/horecano.png'),
-    Image.asset('images/parteneri/immobiliari.png'),
-    Image.asset('images/parteneri/trowit.png')
+    Image.asset("images/parteneri/horecano.png"),
+    Image.asset("images/parteneri/immobiliari.png"),
+    Image.asset("images/parteneri/trowit.png")
   ];
 
   @override

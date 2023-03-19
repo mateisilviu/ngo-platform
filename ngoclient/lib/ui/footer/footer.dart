@@ -140,7 +140,7 @@ class FooterComponent extends StatelessWidget {
     return [
       Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-        child: Text("Unde Donam ONG",
+        child: Text("Unde sa donam ONG",
             style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       Padding(

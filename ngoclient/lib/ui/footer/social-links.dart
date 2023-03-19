@@ -24,7 +24,7 @@ class SocialLinks extends StatelessWidget {
     return [
       Column(
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [Text("Copyright © Unde Donam")],
+        children: [Text("Copyright © Unde Sa Donam")],
       ),
       isMobile
           ? Center(
