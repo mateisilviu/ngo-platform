@@ -30,10 +30,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Unde Donam?',
+      title: 'Unde sa donez?',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(fontSize: 16.0),
+          )),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Thank you for your donation'),
     );

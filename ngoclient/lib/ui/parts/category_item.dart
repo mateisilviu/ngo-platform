@@ -27,9 +27,10 @@ class CategoryItem extends StatelessWidget {
         height: 100,
         child: Center(
             child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(IconData(item.icon!, fontFamily: 'MaterialIcons')),
-            Text(item.name ?? "N/A"),
+            Icon(IconData(item.icon!, fontFamily: 'MaterialIcons'), size: 26),
+            Text(item.name ?? "N/A", style: TextStyle(fontSize: 26)),
           ],
         )),
       )),

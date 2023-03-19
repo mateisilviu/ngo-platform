@@ -55,13 +55,19 @@ class SubCategoryItem extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(IconData(
-                        selectedCategory.subcategory![selectedSubcategory].icon,
-                        fontFamily: 'MaterialIcons')),
-                    Text(selectedCategory
-                        .subcategory![selectedSubcategory].name),
+                    Icon(
+                      IconData(
+                          selectedCategory
+                              .subcategory![selectedSubcategory].icon,
+                          fontFamily: 'MaterialIcons'),
+                      size: 20,
+                    ),
                     Text(
-                        "Total necesar ${selectedCategory.subcategory![selectedSubcategory].total}"),
+                        selectedCategory.subcategory![selectedSubcategory].name,
+                        style: TextStyle(fontSize: 20)),
+                    Text(
+                        "Total necesar ${selectedCategory.subcategory![selectedSubcategory].total}",
+                        style: TextStyle(fontSize: 20)),
                   ],
                 ))),
       );

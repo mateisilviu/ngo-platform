@@ -105,7 +105,8 @@ class _MatchScreenState extends State<MatchScreen> {
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               height: 100,
-              child: Text("Poti dona la urmatoarele ong-uri:"),
+              child: Text("Poti dona la urmatoarele ong-uri:",
+                  style: TextStyle(fontSize: 20)),
             ),
           ),
           SizedBox(
