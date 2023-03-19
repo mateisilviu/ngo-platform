@@ -16,10 +16,24 @@ class HomePageScreen extends StatelessWidget {
     Image(image: AssetImage('images/homepage/donate3_1024.jpg')),
   ];
 
+  List<Widget> partners = [
+    Image.asset('images/parteneri/horecano.png'),
+    Image.asset('images/parteneri/immobiliari.png'),
+    Image.asset('images/parteneri/trowit.png')
+  ];
+
   @override
   Widget build(BuildContext context) {
+    //   List<int> indexPartnerImg = [1,2,3].shuffle();
+
+    // List<String> partnerImgLink = [
+    //   'images/parteneri/horecano.png',
+    //   'images/parteneri/immobiliari.png',
+    //   'images/parteneri/trowit.png'
+    // ].shuffle();
+    partners.shuffle();
     return Scaffold(
-        appBar: AppBar(title: Text("Unde donam?"), actions: [
+        appBar: AppBar(title: Text("Unde sa donez?"), actions: [
           ElevatedButton.icon(
             onPressed: () {
               Provider.of<UserModel>(context, listen: false).loginDonator();
@@ -67,6 +81,14 @@ class HomePageScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Unde sa donez? Iti raspundem la intrebare",
+                    style: TextStyle(fontSize: 30)),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -81,13 +103,43 @@ class HomePageScreen extends StatelessWidget {
                         autoPlayInterval: Duration(seconds: 4),
                         autoPlayAnimationDuration: Duration(seconds: 1),
                         autoPlayCurve: Curves.slowMiddle,
-                        aspectRatio: 1),
+                        aspectRatio: 16 / 9),
                     items: homepageImages,
                   ),
                 ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.6,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Parteneri", style: TextStyle(fontSize: 26)),
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [...partners]),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Parteneri ONG-uri",
+                          style: TextStyle(fontSize: 26)),
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Image.asset(
+                              'images/parteneri/ong-uri/logo-autismvoce.png')
+                        ]),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Parteneri media",
+                          style: TextStyle(fontSize: 26)),
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: []),
+                  ],
+                ),
               ),
               FooterComponent(),
             ],
