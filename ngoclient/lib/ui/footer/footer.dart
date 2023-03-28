@@ -70,8 +70,7 @@ class FooterComponent extends StatelessWidget {
             //width: 618,
             //height: 235,
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/logo.png'))),
+                image: DecorationImage(image: AssetImage('images/logo_.png'))),
             child: Container(),
           ),
         ),
